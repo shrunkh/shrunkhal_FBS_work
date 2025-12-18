@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+void checkArmstrong(); // Declaration
+
+void main() {
+    checkArmstrong();
+}
+
+void checkArmstrong() { // Definition
+    int n, temp, rem, sum = 0;
+    printf("Enter number: ");
+    scanf("%d", &n);
+
+    temp = n;
+    while(temp > 0) {
+        rem = temp % 10;
+        sum += rem * rem * rem;
+        temp /= 10;
+    }
+
+    if(sum == n)
+        printf("Armstrong");
+    else
+        printf("Not Armstrong");
+}
